@@ -3,6 +3,7 @@ import {
   GENRES_REQUESTED,
   MOVIES_RECEIVED,
   MOVIES_REQUESTED,
+  RATING_CHANGED,
 } from './constants';
 
 export const initialState = {
@@ -40,6 +41,12 @@ function moviesReducer(state = initialState, action) {
         ...state,
         movies: [],
         loading: true,
+      };
+
+    case RATING_CHANGED:
+      return {
+        ...state,
+        rating: action.rating,
       };
     default:
       return state;

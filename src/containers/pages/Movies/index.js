@@ -4,7 +4,7 @@ import { compose } from 'redux';
 
 import Movies from './Movies';
 import { makeSelectGenres, makeSelectMovies } from './selectors';
-import { genresRequested, moviesRequested } from './actions';
+import { genresRequested, moviesRequested, ratingChanged } from './actions';
 
 const mapStateToProps = createStructuredSelector({
   genres: makeSelectGenres(),
@@ -12,8 +12,9 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-  moviesRequested: () => dispatch(moviesRequested()),
   genresRequested: () => dispatch(genresRequested()),
+  moviesRequested: () => dispatch(moviesRequested()),
+  ratingChanged: rating => dispatch(ratingChanged(rating)),
 });
 
 const withConnect = connect(
