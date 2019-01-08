@@ -26,5 +26,4 @@ const makeSelectMovies = () =>
     }
   );
 
-// export default makeSelectMoviesPage;
 export { makeSelectGenres, makeSelectMovies, makeSelectRating };

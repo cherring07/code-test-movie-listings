@@ -7,3 +7,5 @@ export const MOVIES_RECEIVED =
   'containers/pages/Movies/constants/MOVIES_RECEIVED';
 export const MOVIES_REQUESTED =
   'containers/pages/Movies/constants/MOVIES_REQUESTED';
+export const RATING_CHANGED =
+  'containers/pages/Movies/constants/RATINGS_CHANGED';

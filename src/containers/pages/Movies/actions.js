@@ -4,6 +4,7 @@ import {
   GENRES_REQUESTED,
   MOVIES_RECEIVED,
   MOVIES_REQUESTED,
+  RATING_CHANGED,
 } from './constants';
 
 export function genericError(error) {
@@ -36,5 +37,12 @@ export function genresReceived(data) {
   return {
     type: GENRES_RECEIVED,
     data,
+  };
+}
+
+export function ratingChanged(rating) {
+  return {
+    type: RATING_CHANGED,
+    rating,
   };
 }

@@ -11,12 +11,8 @@ class Movies extends Component {
     this.props.moviesRequested();
   }
 
-  onRatingChange() {
-    // move to dispatch
-  }
-
   render() {
-    const { movies, genres } = this.props;
+    const { movies, genres, ratingChanged } = this.props;
 
     const movieCards = movies.map(movie => (
       <li key={movie.id}>
@@ -27,7 +23,9 @@ class Movies extends Component {
     return (
       <div>
         <Navbar />
-        <FilterBar onRatingChange={this.onRatingChange} />
+        <FilterBar
+          onRatingChange={event => ratingChanged(event.target.value)}
+        />
         <ol>{movieCards}</ol>
       </div>
     );
@@ -39,6 +37,7 @@ Movies.propTypes = {
   genresRequested: PropTypes.func,
   movies: PropTypes.array,
   moviesRequested: PropTypes.func,
+  ratingChanged: PropTypes.func,
 };
 
 export default Movies;
