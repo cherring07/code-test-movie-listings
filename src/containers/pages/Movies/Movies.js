@@ -11,6 +11,10 @@ class Movies extends Component {
     this.props.moviesRequested();
   }
 
+  onRatingChange() {
+    // move to dispatch
+  }
+
   render() {
     const { movies, genres, ratingChanged } = this.props;
 
