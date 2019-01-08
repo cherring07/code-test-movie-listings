@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import FilterBar from '../../../components/FilterBar';
 import MovieCard from '../../../components/MovieCard';
 import Navbar from '../../../components/Navbar';
 
@@ -8,6 +9,10 @@ class Movies extends Component {
   componentDidMount() {
     this.props.genresRequested();
     this.props.moviesRequested();
+  }
+
+  onRatingChange() {
+    // move to dispatch
   }
 
   render() {
@@ -22,7 +27,7 @@ class Movies extends Component {
     return (
       <div>
         <Navbar />
-
+        <FilterBar onRatingChange={this.onRatingChange} />
         <ol>{movieCards}</ol>
       </div>
     );

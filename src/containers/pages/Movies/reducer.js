@@ -9,6 +9,7 @@ export const initialState = {
   genres: [],
   loading: false,
   movies: [],
+  rating: 0,
 };
 
 function moviesReducer(state = initialState, action) {
